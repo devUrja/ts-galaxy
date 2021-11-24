@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { Route, RouteProps, Switch } from 'react-router-dom'
+import { Route, RouteProps, Switch, BrowserRouter } from 'react-router-dom'
 import { AppRoutings } from 'app/utility/enums/app-routings'
 
 const routes: Array<RouteProps> = [
@@ -12,6 +12,7 @@ const routes: Array<RouteProps> = [
 
 const Routes = () => {
   return (
+    <BrowserRouter>
     <Switch>
       {routes.map(({ component, exact, path }, routeIndex) => (
         <Route
@@ -22,6 +23,7 @@ const Routes = () => {
         />
       ))}
     </Switch>
+    </BrowserRouter>
   )
 }
 
